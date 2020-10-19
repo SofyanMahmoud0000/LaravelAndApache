@@ -18,7 +18,7 @@ In this repo, we are going to explain all steps needed to run laravel on apache 
 * Apache configuration
 * Au
 
-### Install Git
+## Install Git
 
 To install Git we use those two commands 
 
@@ -26,7 +26,7 @@ To install Git we use those two commands
 
 > sudo apt-get install git
 
-### Install PHP (7.4)
+## Install PHP (7.4)
 
 To install PHP7.4 we can use those commands
 
@@ -42,7 +42,7 @@ To install some important extensions
 
 > apt install php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y
 
-### Install UFW 
+## Install UFW 
 
 To install UFW
 
@@ -61,7 +61,7 @@ To show the enabled application
 
 > sudo ufw app list
 
-### Install apache
+## Install apache
 
 To install apache we will run those commands 
 
@@ -88,7 +88,7 @@ Note
 > After installing apache the root will be in (/var/www/html), which means if you have a project named (x), then you must put this project in this path (/var/www/html/x)
 to run your project on apache server 
 
-### Install MYSQL
+## Install MYSQL
 
 To install mysql 
 
@@ -105,7 +105,7 @@ To enable SQL automatically after a reboot
 > sudo systemctl enable mysql
 
 
-### Install composer 
+## Install composer 
 
 Update the package manager cache by running 
 
@@ -150,14 +150,14 @@ Finally, You can test the compser installing by running
 
 > composer 
 
-### Clone the project of laravel 
+## Clone the project of laravel 
 
 on the path (/var/www/html) we will clone the project by running 
 
 > sudo git clone project_remote project_name
 
 
-### Some modification in the project
+## Some modification in the project
 
 After clonning the project, you need some modification 
 
@@ -181,7 +181,7 @@ After clonning the project, you need some modification
 
     Note: We must be in the project directory when we run those commands 
 
-### Apache configuration
+## Apache configuration
 
 Now, we need to define new virtual host for our project 
 In this virtual host, we determine which project will run on apache server 
