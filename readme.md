@@ -3,7 +3,7 @@
 In this repo, we are going to explain all steps needed to run laravel on apache server 
 
 ### We assume that 
-* Our project on github
+* Our project is on github
 * Our OS is linux
 
 ## Table of contents
