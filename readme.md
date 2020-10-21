@@ -16,7 +16,8 @@ In this repo, we are going to explain all steps needed to run laravel on apache 
 * Clone the project of laravel
 * Some modification in the project
 * Apache configuration
-* Au
+* Development and support
+* Authors
 
 ## Install Git
 
