@@ -288,11 +288,11 @@ And this file will have this code
     ServerAdmin admin@server.in
     ServerName site_name.tld		# will be used in ssl (https)
     ServerAlias www.site_name.tld   # will be used in ssl (https)
-	<Directory /var/www/html/project_name>
+    <Directory /var/www/html/project_name>
     	Options Indexes FollowSymLinks
     	AllowOverride All
     	Require all granted
-	</Directory>
+    </Directory>
     DocumentRoot /var/www/html/project_name/public
     ErrorLog /var/www/html/project_name/error.log
     CustomLog /var/www/html/project_name/access.log combined
