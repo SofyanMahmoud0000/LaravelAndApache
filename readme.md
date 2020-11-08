@@ -23,6 +23,10 @@ In this repo, we are going to explain all steps needed to run laravel on apache 
 
 To install Git we use those two commands 
 
+```console
+	sudo apt-get update
+```
+
 > sudo apt-get update
 
 > sudo apt-get install git
