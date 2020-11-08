@@ -23,11 +23,11 @@ In this repo, we are going to explain all steps needed to run laravel on apache 
 
 To install Git we use those two commands 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get update
 ```
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get install git
 ```
 
@@ -37,25 +37,25 @@ To install PHP7.4 we can use those commands
 
 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt -y install software-properties-common
 ```
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo add-apt-repository ppa:ondrej/php
 ```
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get update
 ```
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt -y install php7.4
 ```
 
 To install some important extensions 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt install php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-intl -y
 ```
 
@@ -66,26 +66,26 @@ To install some important extensions
 
 To install UFW
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get install ufw
 ``` 
 
 
 To enable ufw 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo ufw enable
 ``` 
 
 To show the status of UFW
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo ufw status 
 ``` 
 
 To show the enabled application 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo ufw app list
 ``` 
 
@@ -93,35 +93,35 @@ sofyan@sofyan:~$ sudo ufw app list
 
 To install apache we will run those commands 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get update
 ``` 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get install apache2
 ``` 
 
 Configure the firewall
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo ufw allow 'Apache'
 ``` 
 
 Apache configration 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo systemctl restart apache2
 ``` 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo systemctl reload apache2
 ``` 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo systemctl stop apache2
 ``` 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo systemctl start apache2
 ``` 
 
@@ -135,23 +135,23 @@ to run your project on apache server
 
 To install mysql 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get update
 ``` 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get install mysql-server
 ``` 
 
 To start SQL 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo systemctl start mysql
 ``` 
 
 To enable SQL automatically after a reboot
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo systemctl enable mysql
 ``` 
 
@@ -160,19 +160,19 @@ sofyan@sofyan:~$ sudo systemctl enable mysql
 
 Update the package manager cache by running 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get update
 ``` 
 
 Install some dependencies by running 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt install curl php-cli php-mbstring git unzip
 ```
 
 Downloading and install composer 
 
-```shell
+```bash
 sofyan@sofyan:~$ cd ~ && curl -sS https:getcomposer.org/installer -o composer-setup.php
 ```
 
@@ -182,25 +182,25 @@ the Composer Public Keys / Signatures page
 
 Click [here](https://composer.github.io/pubkeys.html) and copy the Installer Checksum (SHA-384), then assign it to a variable called HASH in terminal like that 
 
-```shell
+```bash
 sofyan@sofyan:~$ HASH=544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061
 ```
 
 Now execute the following PHP script to verify that the installation script is safe to run:
 
-```shell
+```bash
 sofyan@sofyan:~$ php -r "if (hash_file('SHA384','composer-setup.php') === '$HASH') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
 ```
 
 You’ll see the following output.
 
-```shell
+```bash
 sofyan@sofyan:~$ Installer verified
 ``` 
 
 To install composer globally, use the following command which will download and install Composer as a system-wide command named composer, under /usr/local/bin:
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 ```
 You’ll see the following output:
@@ -214,7 +214,7 @@ Use it: php /usr/local/bin/composer
 
 Finally, You can test the compser installing by running 
 
-```shell
+```bash
 sofyan@sofyan:~$ composer 
 ```
 
@@ -222,7 +222,7 @@ sofyan@sofyan:~$ composer
 
 on the path (/var/www/html) we will clone the project by running 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo git clone project_remote project_name
 ``` 
 
@@ -232,36 +232,36 @@ sofyan@sofyan:~$ sudo git clone project_remote project_name
 After clonning the project, you need some modification 
 
 * update composer 
-    ```shell
+    ```bash
 	sofyan@sofyan:~$ compser update
 	```	 
 
 * update the data of .env file 
 
 * Generate new key
-    ```shell
+    ```bash
 	sofyan@sofyan:~$ php artisan key:generate
 	```	 
 
 * clear cache 
-    ```shell
+    ```bash
 	sofyan@sofyan:~$ php artisan cache:clear
 	```	 
-    ```shell
+    ```bash
 	sofyan@sofyan:~$ php artisan config:cache
 	```	 
-    ```shell
+    ```bash
 	sofyan@sofyan:~$ php artisan config:clear
 	```	 
 
 * Permissions
-    ```shell
+    ```bash
 	sofyan@sofyan:~$ sudo chmod -R 775 storage
 	```	 
-    ```shell
+    ```bash
 	sofyan@sofyan:~$ sudo chmod -R 775 public
 	```	 
-    ```shell
+    ```bash
 	sofyan@sofyan:~$ sudo sudo chgrp -R www-data .
 	```	 
 
@@ -301,25 +301,25 @@ And this file will have this code
 
 And now we need to enable this virtual host by running
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo a2ensite myproject.conf
 ``` 
 
 And then disable the default virtual host by running 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo a2dissite 000-default.conf
 ``` 
 
 If you want to check the syntax of the virtual host files 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo apache2ctl configtest
 ``` 
 
 After enabling and disabling virtual host, you need to realod the apache server by running:
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo systemctl reload apache2
 ``` 
 
@@ -330,30 +330,30 @@ you will face this problem
 >The requested URL was not found on this server.
 
 To solve this problem you can kindly run 
-```shell
+```bash
 sofyan@sofyan:~$ sudo a2enmod rewrite 
 ``` 
 
 Now if you tried to access your website, you may see the index.php file as a plain text
 and you can solve this problem by installing libapache2-mod-php
-```shell
+```bash
 sofyan@sofyan:~$ sudo apt-get install libapache2-mod-php7.4
 ``` 
 
 and then activate php7.4 by running 
 
-```shell
+```bash
 sofyan@sofyan:~$ sudo a2enmod php7.4
 ``` 
 
 Finally clear the cache 
-```shell
+```bash
 sofyan@sofyan:~$ php artisan cache:clear
 ``` 
-```shell
+```bash
 sofyan@sofyan:~$ php artisan config:cache
 ``` 
-```shell
+```bash
 sofyan@sofyan:~$ php artisan config:clear
 ``` 
 
