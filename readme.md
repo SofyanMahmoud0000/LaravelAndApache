@@ -124,9 +124,9 @@ Downloading and install composer
 Verify that the installer matches the SHA-384 hash for the latest installer found on 
 the Composer Public Keys / Signatures page 
 
-Click [here]('https://composer.github.io/pubkeys.html') and copy the Installer Checksum (SHA-384), then assign it to a variable called $HASH in terminal like that 
+Click [here]['https://composer.github.io/pubkeys.html'] and copy the Installer Checksum (SHA-384), then assign it to a variable called HASH in terminal like that 
 
->$HASH=544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061
+>HASH=544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061
 
 Now execute the following PHP script to verify that the installation script is safe to run:
 
