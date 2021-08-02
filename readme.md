@@ -158,7 +158,7 @@ sofyan@sofyan:~$ sudo systemctl enable mysql
 
 ## Install composer 
 
-you can see all details in this [link](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04)
+### You can see all details in this [link](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-composer-on-ubuntu-20-04)
 
 Update the package manager cache by running 
 
